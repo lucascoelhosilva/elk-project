@@ -23,9 +23,9 @@ public class UserController {
 
 //        LOGGER.info("This is an info message id:" + counter.incrementAndGet() + " Name: " + name);
 
-        logger.error("====> This is an error log");
-        logger.info("====> This is an info log");
-        logger.warn("====> This is an warn log");
+        logger.info("name: " + name);
+//        logger.info("====> This is an info log");
+//        logger.warn("====> This is an warn log");
 
         return new User(counter.incrementAndGet(),
                             String.format(name));
@@ -33,7 +33,7 @@ public class UserController {
 
     @RequestMapping("/")
     public ResponseEntity<String> welcome() {//Welcome page, non-rest
-        logger.info("====> PAGE INIT");
+        logger.info("PAGE INIT");
         return ResponseEntity.status(HttpStatus.OK).body("OK");
     }
 }
