@@ -1,0 +1,10 @@
+version: '2'
+services:
+  app:
+    build:
+      context: example
+    mem_limit: 512m
+    volumes:
+      - .:/myapp
+    ports:
+      - "8080:8080"
