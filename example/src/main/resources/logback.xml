@@ -1,32 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><!--
-    For more configuration information and examples see
-    http://logback.qos.ch/manual/configuration.html
--->
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="true" scan="false">
-    <!--<statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />-->
-
     <appender name="STASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <!-- remoteHost and port are optional (default values shown) -->
         <destination>0.0.0.0:9090</destination>
 
-        <!-- encoder is required -->
         <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
             <providers>
                 <mdc/>
-
                 <context/>
-
                 <version/>
-
                 <logLevel/>
                 <loggerName/>
 
                 <pattern>
                     <pattern>
-                        {
-                        "appName": "elk-example",
-                        "appVersion": "1.0"
-                        }
+                        { "appName": "elk-example", "appVersion": "1.0"}
                     </pattern>
                 </pattern>
 
